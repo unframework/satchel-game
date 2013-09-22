@@ -1,0 +1,19 @@
+{
+  "name": "satchel",
+  "version": "0.1.0",
+  "dependencies": {
+    "coffee-script": "*",
+    "bower": "*",
+    "express": "*",
+    "jade": "*",
+    "less-middleware": "*",
+    "connect-jade-html": "*",
+    "connect-coffee-script": "*"
+  },
+  "devDependencies": {
+    "jasmine-node": "*"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}

@@ -1,0 +1,20 @@
+html
+  head
+    link(rel='stylesheet', type='text/css' href='css/reset.css')
+    link(rel='stylesheet', type='text/css' href='css/main.css')
+    script(type='text/javascript').
+      require = {
+        paths: {
+          'text': '../bower_components/requirejs-text/text',
+          'angular': '../bower_components/angular/angular'
+        },
+        shim: {
+          'angular': { exports: 'angular' }
+        }
+      }
+
+    body(ng-controller='main')
+      h1 Sample Satchel Game
+      satchel-view(game='currentGame')
+
+      script(type='text/javascript', data-main='lib/main', src='bower_components/requirejs/require.js')

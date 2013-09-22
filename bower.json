@@ -1,0 +1,9 @@
+{
+  "name": "satchel",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "*",
+    "requirejs": "*",
+    "requirejs-text": "*"
+  }
+}
