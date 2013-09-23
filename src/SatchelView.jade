@@ -1,2 +1,3 @@
 div.satchel
-  | Grid size: {{ game.grid.w }} x {{ game.grid.h }}
+  ul.items
+    li.item(ng-repeat='item in game.grid.itemList', style='left:{{ 100 * item.x / game.grid.w }}%; top:{{ 100 * item.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')
