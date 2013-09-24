@@ -29,6 +29,7 @@
         box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.5);
 
         .handle {
+            z-index: 1;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -40,8 +41,10 @@
     }
 
     .gesture-target {
+        box-sizing: border-box;
         pointer-events: none;
         position: absolute;
-        background: rgba(255, 0, 0, 0.5);
+        border: 4px solid #0f0;
+        border-radius: 10px;
     }
 }

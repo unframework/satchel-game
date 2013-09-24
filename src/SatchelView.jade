@@ -5,3 +5,7 @@ div.satchel
 
     .gesture(ng-repeat='gesture in activeGestureList', style='left:{{ 100 * gesture.item.x / game.grid.w }}%; top:{{ 100 * gesture.item.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')
       .handle(style='left:{{ gesture.dx }}px; top:{{ gesture.dy }}px')
+
+    //- @todo in v1.1.6 this anonymous wrapper can be replaced with HTML comments using "ng-repeat-start"
+    div(ng-repeat='gesture in activeGestureList')
+      .gesture-target(ng-controller='gestureTargetController', style='left:{{ 100 * target.x / game.grid.w }}%; top:{{ 100 * target.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')
