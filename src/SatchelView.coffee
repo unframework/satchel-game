@@ -18,8 +18,6 @@ define [
       gridWidth = grid[0].offsetWidth
       gridHeight = grid[0].offsetHeight
 
-      scope.activeGestureList = []
-
       # compute legal drag target grid coordinates and pass them to callback
       withDragTarget = (item, dx, dy, callback) ->
         # grid target
@@ -31,6 +29,12 @@ define [
         targetY = Math.min(Math.max(targetY, 0), game.grid.h - 1)
 
         callback targetX, targetY
+
+      scope.activeGestureList = []
+      scope.performGesture = (gesture) ->
+        item = gesture.item
+        withDragTarget item, gesture.dx, gesture.dy, (x, y) ->
+          game.moveItem item, x, y unless item.x is x and item.y is y
 
       scope.gestureTargetController = ($scope) ->
         gesture = $scope.gesture

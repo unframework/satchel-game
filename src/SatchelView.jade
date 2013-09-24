@@ -1,6 +1,6 @@
 div.satchel
   .grid
-    .item(ng-repeat='item in game.grid.itemList', style='left:{{ 100 * item.x / game.grid.w }}%; top:{{ 100 * item.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')
+    .item(ng-repeat='item in game.itemList', style='left:{{ 100 * item.x / game.grid.w }}%; top:{{ 100 * item.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')
       a(href='',gesture='performGesture',gesture-list='activeGestureList',gesture-item='item')
 
     .gesture(ng-repeat='gesture in activeGestureList', style='left:{{ 100 * gesture.item.x / game.grid.w }}%; top:{{ 100 * gesture.item.y / game.grid.h }}%; width:{{ 100 / game.grid.w }}%; height:{{ 100 / game.grid.h }}%')

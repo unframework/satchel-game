@@ -4,7 +4,7 @@ define [
   angular.module('Gesture', []).directive 'gesture', ->
     restrict: 'A'
     scope:
-      gesture: '&'
+      gesture: '='
       gestureItem: '='
       gestureList: '='
     link: (scope, dom) ->
