@@ -24,8 +24,10 @@ define [
           y: $scope.gesture.item.y
 
         updateTarget = ->
-          $scope.target.x = $scope.gesture.item.x + Math.round($scope.game.grid.w * $scope.gesture.dx / gridWidth)
-          $scope.target.y = $scope.gesture.item.y + Math.round($scope.game.grid.h * $scope.gesture.dy / gridHeight)
+          targetX = $scope.gesture.item.x + Math.round($scope.game.grid.w * $scope.gesture.dx / gridWidth)
+          targetY = $scope.gesture.item.y + Math.round($scope.game.grid.h * $scope.gesture.dy / gridHeight)
+          $scope.target.x = Math.min(Math.max(targetX, 0), $scope.game.grid.w - 1)
+          $scope.target.y = Math.min(Math.max(targetY, 0), $scope.game.grid.h - 1)
 
         $scope.$watch 'gesture.dx', updateTarget
         $scope.$watch 'gesture.dy', updateTarget
