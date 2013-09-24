@@ -1,8 +1,9 @@
 define [
   'angular'
   'text!./SatchelView.html'
+  'Gesture'
 ], (angular, template) ->
-  angular.module('SatchelView', []).directive 'satchelView', ->
+  angular.module('SatchelView', ['Gesture']).directive 'satchelView', ->
     restrict: 'E'
     replace: true
     template: template
@@ -10,3 +11,5 @@ define [
       game: '='
     link: (scope) ->
       console.log 'game view created'
+
+      scope.activeGestureList = []
